@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Java Practice Repository
 
 Welcome to my Java Practice Repository! This repository contains all the practice exercises and projects I have completed while learning Java. Each folder and file here is organized by topics and concepts to provide a comprehensive overview of the learning process I have followed.
@@ -13,3 +14,7 @@ Feel free to clone this repository and explore the different Java topics I have 
 
 ```bash
 git clone https://github.com/your-username/java-practice-repo.git
+=======
+# JAVA_GENERATION_VEDANTI
+Java Repository
+>>>>>>> 2e162cece59f9160144344804392ed3eb1022aa6
