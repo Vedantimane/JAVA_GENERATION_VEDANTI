@@ -1,28 +1,25 @@
+package Interface.EMPLOYER.HRSYSTEM.src;
 public class SalesRep extends Employee {
-    private double salesMade;
-
-    public SalesRep(String firstName,
-                 String lastName, 
-                 int registration, 
-                 int age, 
-                 int daysWorked, 
-                 int vacationDaysTaken,
-                 double salary, 
-                 int yearsWorked, 
-                 double salesMade) 
-    {
-        super(firstName, lastName, registration, age, daysWorked, vacationDaysTaken, salary, yearsWorked);
-        this.salesMade = salesMade;
-    }
-
-      // Getter for salesMade
-      public double getSalesMade() {
-        return salesMade;
-    }
-
-    // Calculate commission based on sales made
-    public double calculateComission() {
-        return 0.1 * salesMade; // Return 10% commission of the total sales made
-    }
+    double salesMade;
+    public SalesRep(String firstName, String lastName, int registration, int age, int daysWorked, int vacationDaysTaken,
+    double salary, int yearWorked, String UserName, String passWord, double salesMade) {
+super(firstName, lastName, registration, age, daysWorked, vacationDaysTaken, salary, yearWorked, UserName,
+        passWord);
+this.salesMade = salesMade;
 }
-
+    public int calculateComission(){
+        
+        return (int)(0.1*salesMade);
+    }
+  
+    public void profileVisit(){
+        System.out.println("Opened Profile of --> "+ firstName);
+        System.out.println("Full Name --> " +firstName+" "+lastName);
+        System.out.println("Registration number --> " + registration);
+        System.out.println("Age --> " + age);
+        System.out.println("Sales made --> "+salesMade);
+        System.out.println("Total Commision Earned --> "+ calculateComission());
+        System.out.println("Profile Closed");
+    }
+    
+}

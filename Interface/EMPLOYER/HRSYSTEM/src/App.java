@@ -1,23 +1,22 @@
-
+package Interface.EMPLOYER.HRSYSTEM.src;
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        Employee E1 = new Employee("Ranjan", "Banarji", 10, 30, 2500, 10, 25000.3, 6);
-        System.out.println("hello "+E1.firstName+" "+E1.lastName);
-        System.out.println(" your Time to retire "+E1.timeToRetirement(E1.age,E1.yearsWorked));
-        SalesRep S1 = new SalesRep("A", "last", 10, 30, 730, 05, 30000, 2, 10000);
-        SalesRep S2 = new SalesRep("b", "last", 10, 30, 730, 05, 30000, 2, 20000);
-        SalesRep S3 = new SalesRep("C", "last", 10, 30, 730, 05, 30000, 2, 30000);
         
+        SalesRep Sales1 = new SalesRep("prasad", "Kharche", 10, 25, 730, 25, 30000, 2,"Prasadk","123",30000);
+        //System.out.println("individual comision of "+Sales1.firstName+" is  >>>"+Sales1.calculateComission());
+        Sales1.profileVisit();
+        SalesRep Sales2 = new SalesRep("Sahil", "G", 10, 25, 730, 25, 30000, 2,"sahilG","1234",30000);
+        //System.out.println("individual comision of "+Sales2.firstName+" is  >>>"+Sales2.calculateComission());
+        Sales2.profileVisit();
+        SalesRep Sales3 = new SalesRep("Kunal", "K", 10, 25, 730, 25, 30000, 2,"KunalK","12345",30000);
+        //System.out.println("individual comision of "+Sales3.firstName+" is  >>>"+Sales3.calculateComission());
+        Sales3.profileVisit();
 
-       // Calculate total sales made by the SalesReps
-      
-
-       // Create SalesManager object with total sales
-       SalesManager SM = new SalesManager("Bhayankar", "SSS", 10, 30, 730, 5, 30000, 2, 30000, (S1.getSalesMade() + S2.getSalesMade() + S3.getSalesMade()));
-       
-       // Call the calculateComission method to print the manager's commission
-       SM.calculateComission(); 
-       System.out.println((S1.getSalesMade() + S2.getSalesMade() + S3.getSalesMade()));
+        SalesManager sm = new SalesManager("Vinit", "Siwach",45, 26, 730, 25, 30000, 2,"VinitS","121", 10000, Sales1.salesMade+Sales2.salesMade+Sales3.salesMade);
+        //sm.calculateTotalComission();
+        if(sm.login("VinitS", "121")){
+            sm.profileVisit();
+        }
+        
     }
 }

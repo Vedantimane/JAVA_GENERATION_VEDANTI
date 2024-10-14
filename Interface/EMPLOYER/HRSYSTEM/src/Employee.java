@@ -1,4 +1,6 @@
-public class Employee {
+package Interface.EMPLOYER.HRSYSTEM.src;
+public class Employee implements UserInterface{
+   
     String firstName;
     String lastName;
     int registration;
@@ -6,10 +8,14 @@ public class Employee {
     int daysWorked;
     int vacationDaysTaken;
     double salary;
-    int yearsWorked;
+    int yearWorked;
+    private String UserName;
+    private String passWord;
 
-    public Employee(String firstName, String lastName, int registration, int age, int daysWorked, int vacationDaysTaken,
-            double salary, int yearsWorked) {
+    
+
+    public Employee(String firstName, String lastName, int registration, int age, int daysWorked,
+            int vacationDaysTaken, double salary, int yearWorked, String UserName,String passWord) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.registration = registration;
@@ -17,21 +23,21 @@ public class Employee {
         this.daysWorked = daysWorked;
         this.vacationDaysTaken = vacationDaysTaken;
         this.salary = salary;
-        this.yearsWorked = yearsWorked;
+        this.yearWorked = yearWorked;
+        this.UserName=UserName;
+        this.passWord=passWord;
     }
-
-    // Calculate time left to retirement
-    public int timeToRetirement(int age, int yearsWorked) {
-        return Math.min(60 - age, 40 - yearsWorked);
+    @Override
+    public boolean login(String username,String password){
+        return this.UserName.equals(username)&&this.passWord.equals(password);
     }
-
-    // Calculate vacation time left
-    public int vacationTimeLeft(int daysWorked, int vacationDaysTaken) {
-        return (daysWorked / 360) * (30 - vacationDaysTaken);
+    public int timeToRetirement(){
+        return Math.min(60-age,40-yearWorked);
     }
-
-    // Calculate bonus
-    public double calculateBonus(double salary) {
-        return 2.2 * salary;
+    public int vacationTimeLeft(){
+        return (daysWorked/360)*(30-vacationDaysTaken);
+    }
+    public int calculateBonus(){
+        return (int) (2.2*salary);
     }
 }
